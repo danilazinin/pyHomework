@@ -1,10 +1,19 @@
-a = int(input("Введите номер четверти:"))
+n = int(input("Введите число N:"))
+a = int(input("Введите позицию 1:"))
+b = int(input("Введите позицию 2:"))
 
-if a == 1:
-    print("при x (0; +oo) и при y (0; +oo)")
-elif a == 2:
-    print("при x (0; +oo) и при y (-oo; 0)")
-elif a == 3:
-    print("при x (-oo; 0) и при y (-oo; 0)")
-elif a == 4:
-    print("при x (-oo; 0) и при y (0; +oo)")    
+
+lst = []
+num = 0
+
+
+for index in range(-n, n + 1):
+    lst.append(index) 
+    num = num + 1
+
+
+sum = lst[a] + lst[b]
+
+
+print(lst)
+print(f"Сумма элемента на позиции {a} и элемента на позиции {b} равна {sum}")
