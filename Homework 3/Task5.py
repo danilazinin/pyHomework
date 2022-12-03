@@ -6,28 +6,26 @@
 [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
 '''
 
-mem = {1: -1, 2: -1}
- 
-def fib1(n):
-    if n not in mem:
-        mem[n] = (fib1(n - 1) + fib1(n - 2)) 
-    return mem[n]
+def Fibonacci(n):
+    if n in [1, 2]:                       
+        return 1
+    else:
+        return Fibonacci(n-1) + Fibonacci(n-2)
 
-fib1(8)
-print(mem)
+def FibonacciNegative(n):
+    if n == 1:                       
+        return 1
+    elif n == 2:                       
+        return -1
+    else:
+        num1, num2 = 1, -1
+        for i in range(2, n):
+            num1, num2 = num2, num1 - num2
+        return num2
 
-
-mem = {1: 1, 2: 1}
-
-def fib(n):
-    if n not in mem:
-        mem[n] = fib(n - 1) + fib(n - 2)
- 
-    return mem[n]
-
-
-fib(8)
-fib1(8)
-print(mem)
-
-
+list = [0]
+number = int(input('Введите число:'))
+for e in range(1, number + 1):
+    list.append(Fibonacci(e))
+    list.insert(0, FibonacciNegative(e))
+print(list)
