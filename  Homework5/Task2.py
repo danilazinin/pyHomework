@@ -11,3 +11,5 @@ def Easy_numbers(n):
         lst.append(n)
     return lst
 print(Easy_numbers(int(input('Введите число: '))))
+
+
